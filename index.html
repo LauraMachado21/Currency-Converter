@@ -99,18 +99,23 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Currency Conversion Calculator</h2>
-                    <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
+                    <p class="lead">Choose To and From currencies.<br>Enter amount for conversion.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6" style="padding-top:75px">
-                    <select id="selectFromCurrency">
+                    <select id="selectFromCurrency" onchange="getConversion()">
+                      <option value="">From Currency</option>
                       <script type="text/javascript">getCurrencies()</script>
                     </select>
-                    <select class="col-sm-offset-3" id="selectToCurrency">
+                    <select class="col-sm-offset-3" id="selectToCurrency" onchange="getConversion()">
+                      <option value="">To Currency</option>
                       <script type="text/javascript">getCurrencies()</script>
                     </select>
                 </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6" style="padding-top:50px">
+                    <input type="text" id="amountFromCurrency" style="width:115px; text-align:right" onchange="getConversion()">
+                    <input id="amountToCurrency" class="col-sm-offset-3" style="width:115px; text-align:right" readonly>
+                </div>
             </div>
-
         </div>
         <!-- /.container -->
 
@@ -139,28 +144,6 @@
 
     </div>
     <!-- /.content-section-b -->
-
-    <div class="content-section-a">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/phones.png" alt="">
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-a -->
 
 	<a  name="contact"></a>
     <div class="banner">

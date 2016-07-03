@@ -34,10 +34,30 @@ var currencyOptions = {
 };
 
 function getCurrencies() {
-  var text = "<option>Select Currency</option>";
+  var text = "";
 
   for (var currency in currencyOptions) {
      text+= '<option value="'+currencyOptions[currency]+'">'+currency+'</option>';
  }
   document.write(text);
+}
+
+function getConversion(){
+  $.getJSON("http://api.fixer.io/latest", conversion)
+}
+
+//Conversion Equation = (Currency To)/(Currency From)*(From Amount Provided)
+function conversion(data){
+  var amountFrom = document.getElementById("amountFromCurrency").value;
+  var ToCurrency = document.getElementById("selectToCurrency").value;
+  var FromCurrency = document.getElementById("selectFromCurrency").value;
+  var textbox = document.getElementById("amountToCurrency");
+  var fx = data.rates;
+
+  if(ToCurrency!=""&&FromCurrency!=""&&amountFrom!=""){
+      var rate = fx[ToCurrency]/fx[FromCurrency]*amountFrom;
+      textbox.value = rate.toFixed(4)
+  }else{
+    textbox.value = " "
+  }
 }
