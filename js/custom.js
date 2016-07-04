@@ -60,6 +60,8 @@ function conversion(data){
       var rate = fx[ToCurrency]/fx[FromCurrency]*amountFrom;
       textbox.value = rate.toFixed(4)
       putExchangeRate(ToCurrency,FromCurrency,fx);
+  }else if(ToCurrency!=""&&FromCurrency!=""){
+    putExchangeRate(ToCurrency,FromCurrency,fx);
   }else{
     textbox.value = " "
   }
@@ -68,5 +70,5 @@ function conversion(data){
 function putExchangeRate(toCurrency, fromCurrency, fx){
   var text = document.getElementById('exchangeRate');
   var exchangeRateString = "1 " + fromCurrency + " equals " + (fx[toCurrency]/fx[fromCurrency]).toFixed(4) + " "+ toCurrency;
-  text.innerHTML= exchangeRateString
+  text.value= exchangeRateString
 }
