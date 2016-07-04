@@ -46,6 +46,7 @@ function getConversion(){
   $.getJSON("http://api.fixer.io/latest", conversion)
 }
 
+
 //Conversion Equation = (Currency To)/(Currency From)*(From Amount Provided)
 function conversion(data){
   var amountFrom = document.getElementById("amountFromCurrency").value;
@@ -53,11 +54,19 @@ function conversion(data){
   var FromCurrency = document.getElementById("selectFromCurrency").value;
   var textbox = document.getElementById("amountToCurrency");
   var fx = data.rates;
+  fx["EUR"]=1;
 
   if(ToCurrency!=""&&FromCurrency!=""&&amountFrom!=""){
       var rate = fx[ToCurrency]/fx[FromCurrency]*amountFrom;
       textbox.value = rate.toFixed(4)
+      putExchangeRate(ToCurrency,FromCurrency,fx);
   }else{
     textbox.value = " "
   }
+}
+
+function putExchangeRate(toCurrency, fromCurrency, fx){
+  var text = document.getElementById('exchangeRate');
+  var exchangeRateString = "1 " + fromCurrency + " equals " + (fx[toCurrency]/fx[fromCurrency]).toFixed(4) + " "+ toCurrency;
+  text.innerHTML= exchangeRateString
 }

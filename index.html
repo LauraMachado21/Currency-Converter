@@ -10,6 +10,7 @@
     <meta name="author" content="">
 
     <title>Foreigner - Currency Conversion Calculator</title>
+    <link rel="icon" href="img/moneybag.png">
 
     <link href="css/custom.css" rel="stylesheet">
     <!-- Bootstrap Core CSS -->
@@ -101,19 +102,19 @@
                     <h2 class="section-heading">Currency Conversion Calculator</h2>
                     <p class="lead">Choose To and From currencies.<br>Enter amount for conversion.</p>
                 </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6" style="padding-top:75px">
-                    <select id="selectFromCurrency" onchange="getConversion()">
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6" style="padding-top:75px;">
+                    <select id="selectFromCurrency" onchange="getConversion()" style="font-size:50px">
                       <option value="">From Currency</option>
                       <script type="text/javascript">getCurrencies()</script>
                     </select>
-                    <select class="col-sm-offset-3" id="selectToCurrency" onchange="getConversion()">
+                    <select class="col-sm-offset-3" id="selectToCurrency" onchange="getConversion()" style="font-size:50px">
                       <option value="">To Currency</option>
                       <script type="text/javascript">getCurrencies()</script>
                     </select>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6" style="padding-top:50px">
-                    <input type="text" id="amountFromCurrency" style="width:115px; text-align:right" onchange="getConversion()">
-                    <input id="amountToCurrency" class="col-sm-offset-3" style="width:115px; text-align:right" readonly>
+                    <input type="text" id="amountFromCurrency" style="width:122px; text-align:right" onchange="getConversion()">
+                    <input id="amountToCurrency" class="col-sm-offset-3" style="width:108px; text-align:right" readonly>
                 </div>
             </div>
         </div>
@@ -131,11 +132,11 @@
                 <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
+                    <h2 class="section-heading">Exchange Rate</h2>
+                    <p class="lead" id="exchangeRate"></p>
                 </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/dog.png" alt="">
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6" style="text-align:center">
+                    <img class="img-responsive" src="img/moneybag.png" alt="" style="width:50%">
                 </div>
             </div>
 
