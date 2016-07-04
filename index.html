@@ -103,18 +103,18 @@
                     <p class="lead">Choose To and From currencies.<br>Enter amount for conversion.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6" style="padding-top:75px;">
-                    <select id="selectFromCurrency" onchange="getConversion()" style="font-size:50px">
+                    <select id="selectFromCurrency" onchange="getConversion()" style="width:30%">
                       <option value="">From Currency</option>
                       <script type="text/javascript">getCurrencies()</script>
                     </select>
-                    <select class="col-sm-offset-3" id="selectToCurrency" onchange="getConversion()" style="font-size:50px">
+                    <select class="col-sm-offset-3" id="selectToCurrency" onchange="getConversion()" style="width:30%">
                       <option value="">To Currency</option>
                       <script type="text/javascript">getCurrencies()</script>
                     </select>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6" style="padding-top:50px">
-                    <input type="text" id="amountFromCurrency" style="width:122px; text-align:right" onchange="getConversion()">
-                    <input id="amountToCurrency" class="col-sm-offset-3" style="width:108px; text-align:right" readonly>
+                    <input type="text" id="amountFromCurrency" style="width:30%; text-align:right" onchange="getConversion()">
+                    <input id="amountToCurrency" class="col-sm-offset-3" style="width:30%; text-align:right" readonly>
                 </div>
             </div>
         </div>
